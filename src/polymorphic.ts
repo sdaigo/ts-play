@@ -60,3 +60,16 @@ const four = lookup(
 ); // "three"
 
 console.log(four === "four"); // true
+
+// Row polymorphism
+// ensure that a record contains at least the given set of fields
+type fnT = <T>(v: T & { x: number }) => T & { x: number };
+
+type A = {};
+type B = { x: number };
+
+let a: A = {};
+const b: B = { x: 1 };
+
+a = b;
+a.x; // Error: Property 'x' does not exist on type 'A'
