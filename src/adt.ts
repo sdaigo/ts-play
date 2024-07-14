@@ -36,6 +36,7 @@ resultProcessorWithUnit(3); // Error
 resultProcessorWithUnit(5); // Ok
 
 // Discriminated unions
+// each type in a union has common properties with literal types
 type Result =
   | { type: "ok"; value: number } //
   | { type: "error"; message: string };
